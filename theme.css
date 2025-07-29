@@ -2,103 +2,89 @@
  * @name CyanPack
  * @author GumballGardas
  * @version 1.0.0
- * @description Clean & modern cyan-based transparent theme for Discord
+ * @description Modern cyan theme based on ClearVision V7
  * @authorId GumballGardas
- * @invite jsQ9UP7kCA
+ * @source https://github.com/GumballGardas/CyanPack
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url("https://raw.githubusercontent.com/animaz2025/sapp/refs/heads/main/themeee.css");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap");
 
 :root {
-  /* TEMEL AYARLAR */
-  --main-color: #00e0ff;
-  --hover-color: #00bcd4;
+  /* ACCENT COLORS */
+  --main-color: #00f7ff; /* cyan main */
+  --hover-color: #00c9d1; /* cyan hover */
+  --success-color: #00ffa3;
+  --danger-color: #ff3b3b;
+
+  /* STATUS COLORS */
+  --online-color: #00ffcc;
+  --idle-color: #ffd000;
+  --dnd-color: #ff4a4a;
+  --streaming-color: #8000ff;
+  --offline-color: #888888;
+
+  /* APP BACKGROUND */
+  --background-shading-percent: 100%;
   --background-image: url(https://i.hizliresim.com/piteumd.png);
-  --background-blur: 12px;
-  --background-opacity: 0.85;
-  --font-main: 'Inter', sans-serif;
+  --background-position: center;
+  --background-size: cover;
+  --background-attachment: fixed;
+  --background-filter: brightness(105%) contrast(105%) saturate(150%);
+
+  /* USER POPOUT */
+  --user-popout-image: var(--background-image);
+  --user-popout-position: var(--background-position);
+  --user-popout-size: var(--background-size);
+  --user-popout-attachment: var(--background-attachment);
+  --user-popout-filter: var(--background-filter);
+
+  /* USER MODAL */
+  --user-modal-image: var(--background-image);
+  --user-modal-position: var(--background-position);
+  --user-modal-size: var(--background-size);
+  --user-modal-attachment: var(--background-attachment);
+  --user-modal-filter: var(--background-filter);
+
+  /* HOME ICON */
+  --home-icon: url("https://i.imgur.com/knu0gJQ.png");
+  --home-size: cover;
+
+  /* FONTS */
+  --main-font: "Rubik", sans-serif;
+  --code-font: Consolas, "gg mono", "Liberation Mono", Menlo, Courier, monospace;
+
+  /* CHANNEL COLORS */
+  --channel-normal: var(--interactive-normal);
+  --channel-muted: var(--interactive-muted);
+  --channel-hover: var(--hover-color);
+  --channel-selected: #ffffff;
+  --channel-selected-bg: rgba(0, 247, 255, 0.1);
+  --channel-unread: var(--main-color);
+  --channel-unread-hover: var(--hover-color);
+
+  /* ACCESSIBILITY */
+  --focus-color: var(--main-color);
 }
 
-/* ARKA PLAN */
-body::before {
-  content: '';
-  background: var(--background-image) center/cover no-repeat fixed;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: -2;
-  filter: blur(var(--background-blur));
-  opacity: var(--background-opacity);
-}
-
-/* UYGULAMA GENELİ */
-.appMount-2yBXZl,
-.app-2rEoOp,
-.bg-1QIAus {
-  background: transparent !important;
-}
-
-/* METİN STİLİ */
-* {
-  font-family: var(--font-main) !important;
-}
-
-.theme-dark {
-  --background-primary: rgba(0, 0, 0, 0.3);
-  --background-secondary: rgba(0, 0, 0, 0.2);
-  --background-tertiary: rgba(0, 0, 0, 0.1);
-  --background-floating: rgba(0, 0, 0, 0.4);
-  --channeltextarea-background: rgba(0, 0, 0, 0.25);
-  --scrollbar-thin-thumb: rgba(0, 224, 255, 0.5);
-  --scrollbar-auto-thumb: rgba(0, 224, 255, 0.3);
-  --scrollbar-auto-track: transparent;
-  --brand-experiment: var(--main-color);
-}
-
-/* SUNUCU İKONLARI */
-.wrapper-3kah-n,
-.guilds-2JjMmN {
-  background-color: transparent !important;
-}
-
-/* SOL MENÜ İKONLAR */
-.homeIcon-r0w4ny {
-  content: url('https://i.imgur.com/knu0gJQ.png') !important;
-  width: 32px;
-  height: 32px;
-  margin: auto;
-  filter: drop-shadow(0 0 4px var(--main-color));
-}
-
-/* SEÇİLEN KANAL, HOVER RENKLERİ */
-.containerDefault-YUSmu3:hover,
-.containerDefault-YUSmu3.selected-aXhQR6 {
-  background-color: rgba(0, 224, 255, 0.1) !important;
-  color: var(--main-color) !important;
-}
-
-/* DURUM RENKLERİ */
-.status-online, .status-online-mobile {
-  background-color: #00ffcc !important;
-}
-.status-idle {
-  background-color: #ffcc00 !important;
-}
-.status-dnd {
-  background-color: #ff0033 !important;
-}
-.status-offline {
-  background-color: #666 !important;
-}
-
-/* BAŞLIK YAZISI YERİNE */
-::before {
+/* SOL ÜSTTE TEMA İSMİ */
+:root::after {
   content: "CyanPack by GumballGardas";
   position: fixed;
   top: 10px;
-  left: 20px;
+  left: 16px;
   font-size: 14px;
+  font-weight: 500;
+  font-family: "Rubik", sans-serif;
   color: var(--main-color);
-  z-index: 9999;
-  opacity: 0.7;
+  text-shadow: 0 0 6px rgba(0, 247, 255, 0.4);
+  z-index: 1000;
   pointer-events: none;
+  opacity: 0.75;
+}
+
+/* CLEARVISION VERSİYON YAZISINI GİZLE */
+.theme-version,
+[class*="version"] {
+  display: none !important;
 }
