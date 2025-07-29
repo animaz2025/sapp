@@ -1,0 +1,104 @@
+/**
+ * @name CyanPack
+ * @author GumballGardas
+ * @version 1.0.0
+ * @description Clean & modern cyan-based transparent theme for Discord
+ * @authorId GumballGardas
+ * @invite jsQ9UP7kCA
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  /* TEMEL AYARLAR */
+  --main-color: #00e0ff;
+  --hover-color: #00bcd4;
+  --background-image: url(https://i.hizliresim.com/piteumd.png);
+  --background-blur: 12px;
+  --background-opacity: 0.85;
+  --font-main: 'Inter', sans-serif;
+}
+
+/* ARKA PLAN */
+body::before {
+  content: '';
+  background: var(--background-image) center/cover no-repeat fixed;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -2;
+  filter: blur(var(--background-blur));
+  opacity: var(--background-opacity);
+}
+
+/* UYGULAMA GENELİ */
+.appMount-2yBXZl,
+.app-2rEoOp,
+.bg-1QIAus {
+  background: transparent !important;
+}
+
+/* METİN STİLİ */
+* {
+  font-family: var(--font-main) !important;
+}
+
+.theme-dark {
+  --background-primary: rgba(0, 0, 0, 0.3);
+  --background-secondary: rgba(0, 0, 0, 0.2);
+  --background-tertiary: rgba(0, 0, 0, 0.1);
+  --background-floating: rgba(0, 0, 0, 0.4);
+  --channeltextarea-background: rgba(0, 0, 0, 0.25);
+  --scrollbar-thin-thumb: rgba(0, 224, 255, 0.5);
+  --scrollbar-auto-thumb: rgba(0, 224, 255, 0.3);
+  --scrollbar-auto-track: transparent;
+  --brand-experiment: var(--main-color);
+}
+
+/* SUNUCU İKONLARI */
+.wrapper-3kah-n,
+.guilds-2JjMmN {
+  background-color: transparent !important;
+}
+
+/* SOL MENÜ İKONLAR */
+.homeIcon-r0w4ny {
+  content: url('https://i.imgur.com/knu0gJQ.png') !important;
+  width: 32px;
+  height: 32px;
+  margin: auto;
+  filter: drop-shadow(0 0 4px var(--main-color));
+}
+
+/* SEÇİLEN KANAL, HOVER RENKLERİ */
+.containerDefault-YUSmu3:hover,
+.containerDefault-YUSmu3.selected-aXhQR6 {
+  background-color: rgba(0, 224, 255, 0.1) !important;
+  color: var(--main-color) !important;
+}
+
+/* DURUM RENKLERİ */
+.status-online, .status-online-mobile {
+  background-color: #00ffcc !important;
+}
+.status-idle {
+  background-color: #ffcc00 !important;
+}
+.status-dnd {
+  background-color: #ff0033 !important;
+}
+.status-offline {
+  background-color: #666 !important;
+}
+
+/* BAŞLIK YAZISI YERİNE */
+::before {
+  content: "CyanPack by GumballGardas";
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  font-size: 14px;
+  color: var(--main-color);
+  z-index: 9999;
+  opacity: 0.7;
+  pointer-events: none;
+}
